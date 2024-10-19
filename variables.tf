@@ -83,11 +83,16 @@ variable "database_route_table_tags" {
   default = {}
 }
 
+variable "is_peering_required" {
+  type = bool
+  default = false
+}
+
 variable "acceptor_vpc_id" {
     type = string
     default = ""
 }
 
-variable "vpc_peering_tags {
+variable "vpc_peering_tags" {
     default = {}
 }
