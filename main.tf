@@ -5,7 +5,19 @@ resource "aws_vpc" "main" {
     var.common_tags, 
     var.vpc_tags,
     {
-      Name = "${var.project_name}-${var.environment}"
+      Name = local.name
+    }
+  )
+}
+
+resource "aws_internet_gateway" "gw" {
+  vpc_id = aws_vpc.main.id
+
+  tags = merge (
+    var.common_tags,
+    var.igw_tags,
+    {
+      Name = local.name
     }
   )
 }
