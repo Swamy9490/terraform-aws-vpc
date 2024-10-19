@@ -42,3 +42,43 @@ variable "public_subnets_cidr" {
 variable "public_subnets_tags" {
   default = {}
 }
+
+variable "private_subnets_cidr" {
+    type = list
+    validation {
+        condition = length(var.private_subnets_cidr) == 2
+        error_message = "please give private subnet CIDR"
+    }
+}
+
+variable "private_subnets_tags" {
+  default = {}
+}
+
+variable "database_subnets_cidr" {
+    type = list
+    validation {
+        condition = length(var.database_subnets_cidr) == 2
+        error_message = "please give database subnet CIDR"
+    }
+}
+
+variable "database_subnets_tags" {
+  default = {}
+}
+
+variable "nat_gateway_tags" {
+  default = {}
+}
+
+variable "public_route_table_tags" {
+  default = {}
+}
+
+variable "private_route_table_tags" {
+  default = {}
+}
+
+variable "database_route_table_tags" {
+  default = {}
+}
