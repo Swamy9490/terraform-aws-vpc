@@ -82,3 +82,12 @@ variable "private_route_table_tags" {
 variable "database_route_table_tags" {
   default = {}
 }
+
+variable "acceptor_vpc_id" {
+    type = string
+    default = ""
+}
+
+variable "vpc_peering_tags {
+    default = {}
+}
